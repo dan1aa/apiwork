@@ -1,11 +1,7 @@
-import fetch from "node-fetch";
+import {getData} from './modules/getData.js'
 
 try {
-    const currencies = ['usd', 'eur', 'uah', 'gbp', 'aud', 'chf']
-    const randomValue = Math.floor(Math.random() * currencies.length);
-    const res = await fetch(`https://api.cryptonator.com/api/ticker/btc-${currencies[randomValue]}`)
-    const text = await res.json()
-    console.log(text);
+    getData()
 }
 catch(e) {
     throw new Error(e)
